@@ -9,6 +9,12 @@
     body {
       margin: 0;
       background-color: #000; /* Black background */
+	  animation: fadeIn 1.5s ease-in-out;
+    }
+	
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .banner {
@@ -24,17 +30,18 @@
       height: 100%;
       object-fit: contain;
     }
-
-    .banner img {
-      height: 100%;
-      object-fit: contain;
-    }   
-	.center-content {
+ 
+    .banner img:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+ 
+    .center-content {
       flex: 1;
       text-align: center;
       color: #ADFF2F; /* Zombie green */
       font-family: 'Creepster', cursive;
-      text-shadow: 0 0 10px #ADFF2F, 0 0 20px #7FFF00;
+      text-shadow: 0 0 8px #ADFF2F, 0 0 8px #7FFF00;
     }
 
     .center-content h1 {
@@ -71,6 +78,16 @@
       color: #d0ff90;
     }
 	
+	@media (max-width: 600px) {
+      .center-content h1 {
+      font-size: 36px;
+      }
+
+     .center-content p {
+      font-size: 20px;
+      }
+    }
+	
   </style>
 </head>
 <body>
@@ -85,14 +102,14 @@
   </div>
   
   <!-- Navigation Index -->
-  <div class="nav">
+  <nav class="nav">
     <a href="index.html">Home</a>
     <a href="mobile-menu.html">Mobile Games</a>
     <a href="mobile-apps.html">Mobile Apps</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
 	<a href="test/test.html">Test Area</a>
-  </div>
+  </nav>
 
 </body>
 </html>
