@@ -1,14 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicken Jockey</title>
+  <meta charset="UTF-8">
+  <title>Chicken Jockey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000; /* Black background */
+    }
+
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #2b2b2b; /* Dark grey banner */
+      padding: 10px 20px;
+      height: 150px;
+    }
+
+    .banner img {
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .banner img {
+      height: 100%;
+      object-fit: contain;
+    }   
+	.center-content {
+      flex: 1;
+      text-align: center;
+      color: #ADFF2F; /* Zombie green */
+      font-family: 'Creepster', cursive;
+      text-shadow: 0 0 10px #ADFF2F, 0 0 20px #7FFF00;
+    }
+
+    .center-content h1 {
+      margin: 0;
+      font-size: 60px;
+    }
+
+    .center-content p {
+      margin: 0;
+      font-size: 40px;
+      font-family: Arial, sans-serif;
+      color: #d0ff90;
+    }
+	
+    /* Navigation styles */
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #1a1a1a;
+      padding: 10px 0;
+    }
+
+    .nav a {
+      color: #ADFF2F;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #d0ff90;
+    }
+	
+  </style>
 </head>
 <body>
-    <h1>Chicken Jockey Apps & Games</h1>
-    <p><a href="mobile-menu.html">Mobile Games</a></p>
-	<h1>Test</h1>
-    <p><a href="test/test.html">Mobile Games</a></p>
+
+  <div class="banner">
+    <img src="images/chicken-jockey-right.png" alt="Left Image">
+    <div class="center-content">
+      <h1>Chicken Jockey</h1>
+      <p>Apps and Games</p>
+    </div>
+    <img src="images/chicken-jockey-left.png" alt="Right Image">
+  </div>
+  
+  <!-- Navigation Index -->
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="mobile-menu.html">Mobile Games</a>
+    <a href="mobile-apps.html">Mobile Apps</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+	<a href="test/test.html">Test Area</a>
+  </div>
+
 </body>
 </html>
