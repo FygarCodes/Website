@@ -249,7 +249,13 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
       scaffolding.setAccentColor("#ff4c4c");
 
       try {
-        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Cloud4.sb3"));
+        {const providers = {};
+providers.ws = new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Cloud4.sb3");
+providers.local = new Scaffolding.Cloud.LocalStorageProvider("cloudvariables:p4-@Cloud4.sb3");
+for (const provider of Object.values(providers)) scaffolding.addCloudProvider(provider);
+scaffolding.addCloudProviderOverride("☁ Data", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ USERNAME", providers["local"] || null);
+};
       } catch (error) {
         console.error(error);
       }
