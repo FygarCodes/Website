@@ -1,0 +1,391 @@
+/*==================================================
+  GENERAL
+==================================================*/
+
+*{
+    box-sizing:border-box;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+:root {
+    --gap: 15px;
+    --page-gap: 20px;
+    --card-radius: 24px;
+    --brand-blue: #18418c;
+    --shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+body{
+    margin: var(--page-gap);
+    background:#ffffff;
+}
+
+/* ===== Single Page Grid ===== */
+
+.dashboard{
+
+    display:flex;
+    flex-direction:column;
+    gap: var(--gap);
+
+}
+
+/*==================================================
+  HEADER
+==================================================*/
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: var(--gap);
+}
+
+.headerLeft{
+    display:flex;
+    align-items:center;
+    min-width:0;
+}
+
+.headerIcon{
+    width:72px;
+    height:72px;
+    margin-right:20px;
+    flex-shrink:0;
+}
+
+.headerText{
+    font-size:42px;
+    font-weight:500;
+    color:#18418c;
+    letter-spacing:.3px;
+    line-height:1.1;
+}
+
+.headerRight{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:6px;
+    flex-shrink:0;
+}
+
+.monthSelect{
+    min-width:190px;
+    padding:12px 14px;
+    font-size:18px;
+    font-weight:600;
+    color:#18418c;
+    background:#fff;
+    border:2px solid var(--brand-blue);
+    border-radius:12px;
+    cursor:pointer;
+    outline:none;
+		box-shadow:var(--shadow);
+}
+
+.monthSelect:hover{
+    border-color:#0f2f68;
+}
+
+.monthSelect:focus{
+    box-shadow:0 0 0 3px rgba(24,65,140,.15);
+}
+
+/*==================================================
+  KPI BANNER
+==================================================*/
+
+/* Card */
+
+.card{
+    background:#ffffff;
+    border:2px solid var(--brand-blue);
+    border-radius:var(--card-radius);
+    color:#000;
+    display:flex;
+    align-items:center;
+    padding:15px;
+    min-height:120px;
+    box-shadow:var(--shadow);
+}
+
+/* Icon */
+
+.icon{
+    width:90px;
+    margin-right:20px;
+    flex-shrink:0;
+}
+
+.icon img{
+    width:90px;
+    height:90px;
+    display:block;
+}
+
+/* Text */
+
+.content h3{
+    margin:0;
+    font-size:18px;
+    color:#444;
+    font-weight:600;
+}
+
+.valueRow{
+    display:flex;
+    align-items:baseline;
+    gap:6px;
+    flex-wrap:nowrap;
+    white-space:nowrap;
+}
+
+.value{
+    font-size:42px;
+    font-weight:700;
+    line-height:1;
+    color:#000;
+}
+
+.units{
+    font-size:30px;
+    font-weight:500;
+    color:#000;
+    line-height:1;
+}
+
+.small{
+    margin-top:8px;
+    font-size:17px;
+}
+
+.positive{
+    color:#0b8a3e;
+}
+
+.negative{
+    color:#c62828;
+}
+
+
+/*==================================================
+  CHART GRID
+==================================================*/
+
+.row{
+    display:grid;
+    gap:20px;
+}
+
+.row-2{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.row-3{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+.row-4{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+}
+
+.row-5{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+}
+
+.row-30-30-40{
+    display:grid;
+    grid-template-columns:2.6fr 2.6fr 4.8fr;
+    gap:15px;
+}
+
+/*==================================================
+  LINE CHARTS
+==================================================*/
+
+.chartCard{
+    background:white;
+    border:2px solid var(--brand-blue);
+    border-radius:var(--card-radius);
+    padding:15px;
+    min-width:0;
+		box-shadow:var(--shadow);
+}
+
+.chartContainer{
+    position:relative;
+    height:250px;
+    width:100%;
+    min-width:0;
+    overflow:hidden;
+}
+
+.chartContainer canvas{
+    width:100% !important;
+    height:100% !important;
+}
+
+.panelHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.panelTitle{
+    margin:0;
+    font-size:24px;
+    font-weight:600;
+    color:var(--brand-blue);
+    line-height:1.2;
+}
+
+.chartLegend{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.legendItem{
+    display:flex;
+    align-items:center;
+    font-size:15px;
+    color:#555;
+}
+
+.legendLine{
+    width:28px;
+    height:0;
+    border-top:4px solid;
+    margin-right:8px;
+    border-radius:2px;
+}
+
+.legendLine.blue{
+    border-color:#3f6cc3;
+}
+
+.legendLine.red{
+    border-color:#d62828;
+}
+
+
+/*==================================================
+  DONUT CHARTS
+==================================================*/
+
+.donutLayout{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+}
+
+.donutContainer{
+    width:220px;
+    height:220px;
+    padding:0;
+    flex-shrink:0;
+    position:relative;
+    overflow:visible;
+}
+
+.donutLegend{
+    flex:1;
+}
+
+.legendRow{
+    display:flex;
+    align-items:center;
+    margin-bottom:12px;
+    font-size:22px;
+    color:#333;
+}
+
+.legendColour{
+    width:14px;
+    height:14px;
+    margin-right:10px;
+    border-radius:2px;
+}
+
+.donutContainer canvas{
+    width:100% !important;
+    height:100% !important;
+}
+
+/*==================================================
+  PERFORMANCE INDICATORS
+==================================================*/
+
+.performanceCard{
+    padding:18px 20px;
+}
+
+.performanceGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.performanceItem{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:12px 14px;
+
+}
+
+.performanceItem:not(:last-child){
+    border-right:1px solid #d6d6d6;
+}
+
+.performanceIcon{
+    width:80px;
+    height:80px;
+    flex-shrink:0;
+}
+
+.performanceText{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-width:0;
+}
+
+.performanceTitle{
+    font-size:18px;
+    color:#444;
+    font-weight:600;
+    line-height:1.2;
+    margin-bottom:6px;
+}
+
+.performanceValue{
+    font-size:38px;
+    font-weight:700;
+    line-height:1.1;
+}
+
+.performanceUnits{
+    font-size:18px;
+    color:#666;
+    margin-top:2px;
+}
+
+.performanceTrend{
+    margin-top:8px;
+    font-size:16px;
+    font-weight:600;
+}
+
+/*==================================================
+  RESPONSIVE
+==================================================*/
+
+@media (max-width:1200px){
+    .chartGrid{
+        grid-template-columns:1fr;
+    }
+}

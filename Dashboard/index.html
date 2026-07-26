@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+		<div class="header">
+
+				<!-- Left side: icon + title -->
+				<div class="headerLeft">
+						<img src="images/dashboardIcon.png" class="headerIcon" alt="Dashboard">
+				
+						<div id="dashboardTitle" class="headerText">
+								Heating and Cooling Monthly Dashboard
+						</div>
+				</div>
+
+				<!-- Right side: month selector -->
+				<div class="headerRight">
+						<select id="monthSelect" class="monthSelect">
+								<option value="2026-04">April 2026</option>
+								<option value="2026-05">May 2026</option>
+								<option value="2026-06" selected>June 2026</option>
+								<option value="2026-07">July 2026</option>
+								<option value="2026-08">August 2026</option>
+								<option value="2026-09">September 2026</option>
+								<option value="2026-10">October 2026</option>
+								<option value="2026-11">November 2026</option>
+								<option value="2026-12">December 2026</option>						
+						</select>
+				</div>
+				
+		</div>
+
+		<div id="banner" class="row row-5">
+		</div>
+
+		<div class="row row-2">
+
+				<div class="chartCard">
+
+						<div class="panelHeader">
+								<h2 class="panelTitle">Energy Trend</h2>
+								<div class="chartLegend">
+										<span class="legendItem">
+												<span class="legendLine blue"></span>
+												Energy (kWh)
+										</span>
+								</div>
+						</div>
+
+						<div class="chartContainer">
+								<canvas id="energyChart"></canvas>
+						</div>
+
+				</div>
+
+				<div class="chartCard">
+
+						<div class="panelHeader">
+								<h2 class="panelTitle">Procution Output</h2>
+								<div class="chartLegend">
+										<span class="legendItem">
+												<span class="legendLine red"></span>
+												LTHW
+										</span>
+										<span class="legendItem">
+												<span class="legendLine blue"></span>
+												CHW
+										</span>
+								</div>
+						</div>
+
+						<div class="chartContainer">
+								<canvas id="productionChart"></canvas>
+						</div>
+
+				</div>
+		
+		</div>
+		<div class="row row-30-30-40">
+
+    <div class="chartCard">
+
+        <div class="panelHeader">
+            <h2 class="panelTitle">Energy Use by Source (MWh)</h2>
+        </div>
+
+				<div class="donutLayout">
+						<div class="donutContainer">
+								<canvas id="energySourceChart"></canvas>
+						</div>
+						<div id="energySourceLegend" class="donutLegend"></div>
+				</div>
+
+    </div>
+
+    <div class="chartCard">
+ 
+				<div class="panelHeader">
+            <h2 class="panelTitle">Production by Type (MWh)</h2>
+        </div>
+
+				<div class="donutLayout">
+
+						<div class="donutContainer">
+								<canvas id="productionTypeChart"></canvas>
+						</div>
+						<div id="productionTypeLegend" class="donutLegend"></div>
+				</div>
+
+    </div>
+
+		<div class="chartCard performanceCard">
+
+    		<div class="panelHeader">
+        		<h2 class="panelTitle">
+            		Key Performance Indicators
+        		</h2>
+    		</div>
+
+    <div
+        id="performanceIndicators"
+        class="performanceGrid">
+    </div>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+<script src="dashboardData.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
